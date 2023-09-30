@@ -6,7 +6,7 @@ const cors = require("cors")
 const app = express()
 app.use(
   cors({
-    origin: "https://wagxsist.vercel.app/",
+    origin: ["https://wagxsist.vercel.app", "https://wagxsist-abhisekadhikari666-gmailcom.vercel.app"],
     methods: ["GET", "POST"],
   })
 )
