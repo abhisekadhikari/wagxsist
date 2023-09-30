@@ -4,12 +4,13 @@ const mongoose = require("mongoose")
 const cors = require("cors")
 
 const app = express()
-app.use(
-  cors({
-    origin: ["https://wagxsist.vercel.app", "https://wagxsist-abhisekadhikari666-gmailcom.vercel.app"],
-    methods: ["GET", "POST"],
-  })
-)
+// app.use(
+//   cors({
+//     origin: ["https://wagxsist.vercel.app", "https://wagxsist-abhisekadhikari666-gmailcom.vercel.app"],
+//     methods: ["GET", "POST"],
+//   })
+// )
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(require("./Routes/route"))
