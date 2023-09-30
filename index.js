@@ -7,7 +7,7 @@ const app = express()
 app.use(
   cors({
     origin: "https://wagxsist.vercel.app/",
-    methods: ["POST"],
+    methods: ["GET", "POST"],
   })
 )
 app.use(bodyParser.urlencoded({ extended: true }))
