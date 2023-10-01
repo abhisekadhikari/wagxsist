@@ -19,8 +19,8 @@ app.set(require("dotenv").config())
 const PORT = 3000 || process.env.PORT
 
 mongoose
-  // .connect(process.env.MONGO_DB_URL)
-  .connect("mongodb://127.0.0.1:27017/wagxsist")
+  .connect(process.env.MONGO_DB_URL)
+  // .connect("mongodb://127.0.0.1:27017/wagxsist")
   .then(() => {
     console.log("Connection Successful")
   })
