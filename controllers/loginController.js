@@ -17,7 +17,7 @@ const loginController = async (req, res) => {
     return res.json({ message: "Invalid Credentials", success: false })
   const userid = isUserFound._id
   const accessToken = jwt.sign({ userid }, process.env.ACCESS_TOKEN, {
-    expiresIn: "5m",
+    expiresIn: "15m",
   })
   res.json({
     message: "Hence You Successfully Verified",
