@@ -22,7 +22,7 @@ const loginController = async (req, res) => {
   res.json({
     message: "Hence You Successfully Verified",
     success: true,
-    "Access Token": accessToken,
+    "token": accessToken,
   })
 }
 
