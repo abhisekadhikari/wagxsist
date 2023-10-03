@@ -8,8 +8,13 @@ const upload = require("../utils/multer")
 const productModel = require("../models/productModel")
 
 route.get("/", async (req, res) => {
-  const users = await productModel.find({}).populate("userId")
+  const users = await userSchema.find({})
   res.json(users)
+})
+
+route.get("/products", async (req, res) => {
+  const product = await productModel.find({})
+  res.json(product)
 })
 
 route.post(
