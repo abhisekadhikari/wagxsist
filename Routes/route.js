@@ -6,13 +6,14 @@ const userSchema = require("../models/userSchema")
 const productController = require("../controllers/productController")
 const upload = require("../utils/multer")
 const productModel = require("../models/productModel")
+const auth = require("../middleware/auth")
 
 route.get("/", async (req, res) => {
   const users = await userSchema.find({})
   res.json(users)
 })
 
-route.get("/products", async (req, res) => {
+route.get("/products", auth, async (req, res) => {
   const product = await productModel.find({})
   res.json(product)
 })
