@@ -3,9 +3,12 @@ const route = require("express").Router()
 const userController = require("../controllers/userController")
 const loginController = require("../controllers/loginController")
 const userSchema = require("../models/userSchema")
+const productController = require("../controllers/productController")
+const upload = require("../utils/multer")
+const productModel = require("../models/productModel")
 
 route.get("/", async (req, res) => {
-  const users = await userSchema.find({})
+  const users = await productModel.find({}).populate("userId")
   res.json(users)
 })
 
@@ -54,5 +57,7 @@ route.post(
   ],
   loginController
 )
+
+route.post("/product", upload.single("image"), productController)
 
 module.exports = route
