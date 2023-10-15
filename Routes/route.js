@@ -15,7 +15,7 @@ route.get("/", async (req, res) => {
 
 route.get("/products", auth, async (req, res) => {
   const product = await productModel.find({})
-  res.json(success: true, product: product)
+  res.json({success: true, product: product})
 })
 
 route.post(
