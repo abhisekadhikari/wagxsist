@@ -11,7 +11,7 @@ const loginController = async (req, res) => {
   }
   const { email, password } = req.body
   const isUserFound = await userSchema.findOne({ email: email })
-  if (!isUserFound) return res.json({ message: "Email Not Found" })
+  if (!isUserFound) return res.json({ message: "Invalid Credentials", success: false })
   const verify = await checkPassword(password, isUserFound.password)
   if (!verify)
     return res.json({ message: "Invalid Credentials", success: false })
